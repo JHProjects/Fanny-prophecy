@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fany Prophecy – Tarot cards</title>
+    <meta name="description" content="Do you want to know your 'fanny' future?">
+    <link rel="shortcut icon" href="img/logo.svg" type="image/svg">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Header -->    
+    <header>
+        <div class="header--left-side">
+            <img src="img/logo-2.svg" alt="logo" class="logo">
+            <h1 class="page-title">Fanny Prophecy</h1>
+        </div>
+        <div class="header--right-side">
+            <img src="img/menu-icon.svg" alt="menu icon" class="menu--icon">
+        </div>
+    </header>
+
+
+    <!-- Main Content -->    
+    <main>
+
+        <div class="collected-cards">
+            <p>Your cards</p>
+            <button id="show-cards-btn" class="btn-secondary show-cards-btn btn-unactive">Show</button>
+        </div>
+
+        <div class="your-faith">
+            <p>Your faith</p>
+            <div class="faith-state"><p>unknown</p></div>
+        </div>
+
+        <div class="stacked-cards">
+            <div class="card card-back card-stacked card-back1"></div>
+            <div class="card card-back card-stacked card-back2"></div>
+            <div class="card card-back card-stacked card-back3"></div>
+            <div class="card card-back card-stacked card-back4"></div>
+        </div>
+
+        <div class="draw-a-card">
+            <button id="draw-a-card-btn" class="btn-primary draw-a-card-btn">Draw a card</button>
+        </div>
+
+        <div class="chosen-card">
+            <div class="chosen-card--back card card-back"></div>
+            <div class="chosen-card--front card">
+                <div class="card-graphic">
+                    <div class="card-graphic--img"></div>
+                    <div class="card-title-container">
+                        <hr> 
+                        <p class="card-title">The Vokurka.</p>
+                    </div>   
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="summary">
+            <h3 class="card-name">Draw a card to accept <br> your Faith...</h3>
+            <p class="description"></p>
+            <button id="accept-btn" class="btn-secondary accept-btn btn-unactive">Accept</button>
+        </div>
+
+    </main>
+
+
+    <!-- Footer --> 
+    <footer>
+        <p>Jan Holecek, 2022</p>
+        <p>hosted by GitHub Pages</p>
+    </footer>
+    
+    
+
+    <script src="main.js"></script>
+</body>
+</html>
