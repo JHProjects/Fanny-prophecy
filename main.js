@@ -168,7 +168,7 @@ const cards = [
         name: "The Titties",
         path: CrdPth + "the-titties.jpg",
         impact: 3,
-        desc: `Zayyyyyyyyym, she 21??`,  
+        desc: `Zayyyyyyyyym, she 22??`,  
     },
     {   
         cardNumber: 22,
