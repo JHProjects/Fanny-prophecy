@@ -15,11 +15,30 @@
     width: 0;
     height: 0;
     display: inline;
-    background-image: url(".jpg");
-    background-image: url(".jpg");
-    background-image: url(".jpg");
-    background-image: url(".jpg");
-    
+    background-image: url("img/cards/death.jpg");
+    background-image: url("img/cards/madness.JPG");
+    background-image: url("img/cards/ring-of-fortune.jpg");
+    background-image: url("img/cards/the-aggressor.jpg");
+    background-image: url("img/cards/the-apple-of-sin.JPG");
+    background-image: url("img/cards/the-brothers.JPG");
+    background-image: url("img/cards/the-devil.jpg");
+    background-image: url("img/cards/the-emperor.JPG");
+    background-image: url("img/cards/the-empress.jpg");
+    background-image: url("img/cards/the-fool.JPG");
+    background-image: url("img/cards/the-furies.jpg");
+    background-image: url("img/cards/the-high-priestess.jpg");
+    background-image: url("img/cards/the-chariot.JPG");
+    background-image: url("img/cards/the-justice.JPG");
+    background-image: url("img/cards/the-magician.jpg");
+    background-image: url("img/cards/the-monkey.JPG");
+    background-image: url("img/cards/the-offspring.jpg");
+    background-image: url("img/cards/the-star.jpg");
+    background-image: url("img/cards/the-sun.JPG");
+    background-image: url("img/cards/the-thirst.jpg");
+    background-image: url("img/cards/the-titties.jpg");
+    background-image: url("img/cards/the-tower.JPG");
+    background-image: url("img/cards/the-wanderer.jpg");
+    background-image: url("img/cards/vokurka.JPG");           
 }
 
 /* 
@@ -91,14 +110,12 @@ h1 {
     line-height: 1.1em;
 }
 
-h2 {}
 h3 {
     letter-spacing: .07em;
     font-weight: 800;
     font-size: 1rem;
 }
 
-p {}
 
 button, .faith-state {
     text-transform: uppercase;
@@ -138,8 +155,6 @@ header div {
     display: flex;
     align-items: center;
 }
-
-header .header--left-side {}
 
 header h1 {
     margin: 0 0 0 clamp(.6rem, 2vw, 1.4rem);
@@ -250,6 +265,10 @@ main {
 
 .card {
     aspect-ratio: 9 / 14;
+    -ms-aspect-ratio: 9 / 14;
+    -o-aspect-ratio: 9 / 14;
+    -moz-aspect-ratio: 9 / 14;
+    -webkit-aspect-ratio: 9 / 14;
     border-radius: .8rem;
 }
 
@@ -287,6 +306,10 @@ main {
     grid-area: 3/2 / 4/5;
     width: clamp(14rem, 57vw, 22rem);
     aspect-ratio: 9 / 14;
+    -ms-aspect-ratio: 9 / 14;
+    -o-aspect-ratio: 9 / 14;
+    -moz-aspect-ratio: 9 / 14;
+    -webkit-aspect-ratio: 9 / 14;
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
     transform: 
