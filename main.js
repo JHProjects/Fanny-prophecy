@@ -10,6 +10,9 @@ const cardImg = document.querySelector("#card-graphic--img")
 const cardTitle = document.querySelector("#card-graphic--title")
 const acceptBtn = document.querySelector("#accept-btn")
 const faithState = document.querySelector("#faith-state")
+const faithStateP = document.querySelector("#faith-state-p")
+let s = faithState
+let p = faithStateP
 const showCardsBtn = document.querySelector("#show-cards-btn")
 const cardTitleTwo = document.querySelector("#card-title")
 const cardDescription = document.querySelector("#card-description")
@@ -193,7 +196,9 @@ const cards = [
 // when your draw a card
 draw: function drawCard() {
     if (isCardOnTable) {
-        
+        return
+    } else if (yourCards.length >= 6) {
+        alert("You can draw only 6 cards max.")
         return
     } else {
             chosenCard.classList.remove("card-picked", "card-accepted", "chosen-card")
@@ -228,6 +233,45 @@ function acceptCard(card) {
     cardTitleTwo.innerHTML = `Draw another card to accept <br> your Faith...`
     cardDescription.innerHTML = ``
     acceptBtn.classList.add("btn-unactive")
+
+    updateFaith(card)
+}
+
+function updateFaith(newCard) {
+    yourState += newCard.impact
+    let yourStateString
+    if (yourState == 0) {
+        yourStateString = "neutral"
+        s.classList.remove("gloomy", "doomed", "good", "blessed")
+        s.classList.add("neutral")
+        p.classList.remove("gloomy-p", "doomed-p", "good-p", "blessed-p")
+        p.classList.add("neutral-p")
+    } else if (yourState < 0 && yourState >= -3) {
+        yourStateString = "gloomy"
+        s.classList.remove("neutral", "doomed", "good", "blessed")
+        s.classList.add("gloomy")
+        p.classList.remove("neutral-p", "doomed-p", "good-p", "blessed-p")
+        p.classList.add("gloomy-p")
+    } else if (yourState < -3) {
+        yourStateString = "doomed"
+        s.classList.remove("neutral", "gloomy", "good", "blessed")
+        s.classList.add("doomed")
+        p.classList.remove("neutral-p", "gloomy-p", "good-p", "blessed-p")
+        p.classList.add("doomed-p")
+    }  else if (yourState > 0 && yourState <= 3) {
+        yourStateString = "good" 
+        s.classList.remove("neutral", "doomed", "gloomy", "blessed")
+        s.classList.add("good")
+        p.classList.remove("neutral-p", "doomed-p", "gloomy-p", "blessed-p")
+        p.classList.add("good-p")
+    } else {
+        yourStateString = "blessed"
+        s.classList.remove("neutral", "doomed", "good", "gloomy")
+        s.classList.add("blessed")
+        p.classList.remove("neutral-p", "doomed-p", "good-p", "gloomy-p")
+        p.classList.add("blessed-p")
+    }
+    p.innerHTML = `${yourStateString}`
 }
 
 function openCardsOverlay() {

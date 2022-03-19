@@ -486,6 +486,41 @@ footer p {
 }
 
 
+.neutral {
+    outline-color: var(--grey-color);
+}
+.gloomy {
+    outline-color: var(--main-color);
+}
+.doomed {
+    outline: none;
+    background-color: var(--main-color);
+}
+.good {
+    outline-color: var(--quartiary-color);
+}
+.blessed {
+    outline: none;
+    background-color: var(--quartiary-color);
+}
+
+
+.neutral-p {
+    color: var(--grey-color);
+}
+.gloomy-p {
+    color: var(--main-color);
+}
+.doomed-p {
+    color: var(--white-color)
+}
+.good-p {
+    color: var(--quartiary-color)
+}
+.blessed-p {
+    color: var(--white-color)
+}
+
 
 
 /* -- 9 / Animation keyframes */
