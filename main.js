@@ -19,7 +19,7 @@ const cards = [
     {   
         cardNumber: 1,
         name: "The Fool",
-        path: CrdPth + "the-fool.jpg",
+        path: CrdPth + "the-fool.JPG",
         impact: 0,
         desc: `Your future is blurry as your foolish mind does not care for thee outcome of your fate.`,  
     },
@@ -54,7 +54,7 @@ const cards = [
     {   
         cardNumber: 6,
         name: "Madness",
-        path: CrdPth + "madness.jpg",
+        path: CrdPth + "madness.JPG",
         impact: -3,
         desc: `The hands of madness are trying to get a grip of your mind. You must not let them.`,  
     },
@@ -82,14 +82,14 @@ const cards = [
     {   
         cardNumber: 10,
         name: "The Aplle of Sin",
-        path: CrdPth + "the-apple-of-sin.jpg",
+        path: CrdPth + "the-apple-of-sin.JPG",
         impact: 0,
         desc: `Edden fruit seems unresistable but you must stay strong and not give yourself to the Devil.`,  
     },
     {   
         cardNumber: 11,
         name: "The Brothers",
-        path: CrdPth + "the-brothers.jpg",
+        path: CrdPth + "the-brothers.JPG",
         impact: 3,
         desc: `Brothers are a symbol of frienship and trust. But they are not for each other forever.`,  
     },
@@ -103,7 +103,7 @@ const cards = [
     {   
         cardNumber: 13,
         name: "The Emperor",
-        path: CrdPth + "the-emperor.jpg",
+        path: CrdPth + "the-emperor.JPG",
         impact: 2,
         desc: `The Empreror rules fairly, but only if you are fair to him, or if the stars are aligned to his image.`,  
     },
@@ -117,21 +117,21 @@ const cards = [
     {   
         cardNumber: 15,
         name: "The Chariot",
-        path: CrdPth + "the-chariot.jpg",
+        path: CrdPth + "the-chariot.JPG",
         impact: 2,
         desc: `Your best foe for long travels. But you need to take care of him just as you take care of yourself.`,  
     },
     {   
         cardNumber: 16,
         name: "The Justice",
-        path: CrdPth + "the-justice.jpg",
+        path: CrdPth + "the-justice.JPG",
         impact: 0,
         desc: `The mighty Justice has come to serve it's power. If your conscience is clear, you have nothing to fear.`,  
     },
     {   
         cardNumber: 17,
         name: "The Monkey",
-        path: CrdPth + "the-monkey.jpg",
+        path: CrdPth + "the-monkey.JPG",
         impact: 3,
         desc: `A funny monkey.`,  
     },
@@ -152,7 +152,7 @@ const cards = [
     {   
         cardNumber: 20,
         name: "The Sun",
-        path: CrdPth + "the-sun.jpg",
+        path: CrdPth + "the-sun.JPG",
         impact: 2,
         desc: `Sun is shining it's healing rays and will heal everything and everybody. You just have not stand in the shade.`,  
     },
@@ -166,7 +166,7 @@ const cards = [
     {   
         cardNumber: 22,
         name: "The Tower",
-        path: CrdPth + "the-tower.jpg",
+        path: CrdPth + "the-tower.JPG",
         impact: 1,
         desc: `A very sturdy tower. It can hold a lot of weight, but if you remove just a single brick, it will collapse into dirt and dust`,  
     },
@@ -180,7 +180,7 @@ const cards = [
     {   
         cardNumber: 24,
         name: "Vokurka",
-        path: CrdPth + "vokurka.jpg",
+        path: CrdPth + "vokurka.JPG",
         impact: -3,
         desc: `Oh hey it's Vokurka... Pretend like you're happy to see him again.`,  
     },

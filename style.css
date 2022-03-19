@@ -11,6 +11,16 @@
     font-weight: bold; 
 }
 
+#preload-images {
+    width: 0;
+    height: 0;
+    display: inline;
+    background-image: url(".jpg");
+    background-image: url(".jpg");
+    background-image: url(".jpg");
+    background-image: url(".jpg");
+    
+}
 
 /* 
 >> TABLE OF CONTENTS << 
@@ -244,7 +254,13 @@ main {
 }
 
 .card-back {
-    background: url(img/card-back.svg) no-repeat center;
+    background-image: url(img/card-back.svg);
+    -webkit-background-image: url(img/card-back.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
 }
 
 
@@ -272,6 +288,7 @@ main {
     width: clamp(14rem, 57vw, 22rem);
     aspect-ratio: 9 / 14;
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
     transform: 
         perspective(12cm)
         rotateY(.5turn)
@@ -311,8 +328,13 @@ main {
 
 .card-graphic--img {
     flex: 1;
-    background: url("img/cards/the-vokurka.jpg") center no-repeat;   
+    background-image: url("img/cards/the-vokurka.jpg");   
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
 }
 
 .card-title-container {
