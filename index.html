@@ -21,7 +21,7 @@
             <h1 class="page-title">Fanny Prophecy</h1>
         </div>
         <div class="header--right-side">
-            <img src="img/menu-icon.svg" alt="menu icon" class="menu--icon">
+            <img src="img/menu-icon.svg" alt="menu icon" id="menu--icon" class="menu--icon">
         </div>
     </header>
 
@@ -71,6 +71,15 @@
         </div>
 
     </main>
+
+
+    <!-- Overlays --> 
+    <div id="closing-div" class="hidden" onclick="closeCardsOverlay()"></div>
+    <div id="user-cards-overlay" class="user-cards-overlay">
+        <h3>Your cards</h3>
+        <div id="card-grid" class="card-grid"></div>
+        
+    </div>
 
 
     <!-- Footer --> 

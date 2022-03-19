@@ -13,6 +13,10 @@ const faithState = document.querySelector("#faith-state")
 const showCardsBtn = document.querySelector("#show-cards-btn")
 const cardTitleTwo = document.querySelector("#card-title")
 const cardDescription = document.querySelector("#card-description")
+const menuIcon = document.querySelector("#menu--icon")
+const cardGrid = document.querySelector("#card-grid")
+const userCardsOverlay = document.querySelector("#user-cards-overlay")
+const closingDiv = document.querySelector("#closing-div")
 
 const CrdPth = "./img/cards/"
 const cards = [
@@ -211,6 +215,7 @@ draw: function drawCard() {
 
             let acceptListener = acceptBtn.addEventListener("click", e => {acceptCard(currentCard)}, {once: true})
             let acceptListenerCard = chosenCard.addEventListener("click", e => {acceptCard(currentCard)}, {once: true})
+            let openingMenuListener = menuIcon.addEventListener("click", e => {openCardsOverlay()})
        } 
 }
 
@@ -223,7 +228,27 @@ function acceptCard(card) {
     cardTitleTwo.innerHTML = `Draw another card to accept <br> your Faith...`
     cardDescription.innerHTML = ``
     acceptBtn.classList.add("btn-unactive")
-    
+}
+
+function openCardsOverlay() {
+    cardGrid.innerHTML = ""
+    userCardsOverlay.classList.add("user-cards-overlay--visible")
+    closingDiv.classList.remove("hidden")
+    yourCards.forEach(e => cardGrid.insertAdjacentHTML("beforeend", `
+        <div class="card">
+            <div class="card-graphic card-grid-item">
+                <div id="card-graphic--img" class="card-graphic--img" alt="the card image could no load" style="background-image: url(${e.path})"></div>
+                <div class="card-title-container">
+                    <hr> 
+                    <p id="card-graphic--title" class="card-title small-title">${e.name}</p>
+                </div>   
+            </div>
+        </div>`))
+}
+
+function closeCardsOverlay() {
+    userCardsOverlay.classList.remove("user-cards-overlay--visible")
+    closingDiv.classList.add("hidden")
 }
 
 
