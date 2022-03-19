@@ -144,10 +144,10 @@ const cards = [
     },
     {   
         cardNumber: 19,
-        name: "The Star",
+        name: "The Stars",
         path: CrdPth + "the-star.jpg",
         impact: 3,
-        desc: `Star lends you guidance when you need it the most – in the night`,  
+        desc: `Stars lend you guidance when you need it the most – in the night`,  
     },
     {   
         cardNumber: 20,
@@ -189,11 +189,12 @@ const cards = [
 // when your draw a card
 draw: function drawCard() {
     if (isCardOnTable) {
-        acceptCard(currentCard)
+        
+        return
     } else {
-        if (!chosenCard.classList.contains("card-accepted")) {
+            chosenCard.classList.remove("card-picked", "card-accepted", "chosen-card")
+            chosenCard.classList.add("chosen-card")
             isCardOnTable = true
-            
             
             currentIndex = ranNum(cards.length)
             currentCard = cards[currentIndex]
@@ -206,24 +207,23 @@ draw: function drawCard() {
 
             chosenCard.classList.add("card-picked")
             acceptBtn.classList.remove("btn-unactive")
+            
 
             let acceptListener = acceptBtn.addEventListener("click", e => {acceptCard(currentCard)}, {once: true})
-        } else {
-            chosenCard.classList.remove("card-picked", "card-accepted")
-        }
-    } 
+            let acceptListenerCard = chosenCard.addEventListener("click", e => {acceptCard(currentCard)}, {once: true})
+       } 
 }
 
 function acceptCard(card) {
     isCardOnTable = false
     yourCards.push(card)
     chosenCard.classList.add("card-accepted")
+    showCardsBtn.classList.remove("btn-unactive")
 
-    cardTitleTwo.innerHTML = `Draw a card to accept <br> your Faith...`
+    cardTitleTwo.innerHTML = `Draw another card to accept <br> your Faith...`
     cardDescription.innerHTML = ``
     acceptBtn.classList.add("btn-unactive")
     
-    classRemoveTimeout = setTimeout( e => {chosenCard.classList.remove("card-picked", "card-accepted")}, 800)
 }
 
 
