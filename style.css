@@ -404,7 +404,11 @@ footer p {
 }
 
 @keyframes test {
-    from {visibility: visible;}
+    from {
+        visibility: visible;
+        transform: 
+        translate3d(0, 0, 0);
+    }
     to {transform: 
         perspective(12cm)
         translate3d(75vw, -12vw, 0)
