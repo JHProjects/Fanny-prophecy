@@ -62,12 +62,12 @@ html {
     text-transform: uppercase;
     letter-spacing: .01rem;
     background: #fff9f7;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 body {
     width: calc(98vw - 1.4rem);
-    height: calc(99vh - .7rem);
+    height: calc(98vh - .3rem);
     margin: clamp(.3rem, 2vw, .75rem) auto auto auto;
     display: flex;
     flex-direction: column;
@@ -106,6 +106,7 @@ button, .faith-state {
 }
 
 button:hover {
+    cursor: pointer;
     filter: contrast(150%);
 }
 
@@ -170,7 +171,7 @@ main {
 /* collected cards */
 .collected-cards {
     grid-area: 1/1 / 2/3;
-    font-size: 11px; 
+    font-size: .8rem; 
 }
 
 .show-cards-btn {
@@ -183,7 +184,7 @@ main {
 }
 
 .your-faith > p {
-    font-size: 11px;
+    font-size: .8rem;
     margin: auto
 }
 
@@ -209,7 +210,7 @@ main {
 
 .draw-a-card-btn {
     width: 100%;
-    margin: auto auto .5rem auto;
+    margin: auto auto .2rem auto;
 }
 
 
@@ -228,7 +229,7 @@ main {
 }
 
 .accept-btn {
-    margin-top: 1rem;
+    margin-top: .8rem;
     min-width: 9rem;
     min-height: 2.1rem;
 }
@@ -268,19 +269,21 @@ main {
 .chosen-card {
     margin-top: clamp(.1rem, .5vh, 3rem);
     grid-area: 3/2 / 4/5;
-    width: clamp(14rem, 57vw, 20rem);
-    height: max-content;
+    width: clamp(14rem, 57vw, 22rem);
     aspect-ratio: 9 / 14;
     transform-style: preserve-3d;
     transform: 
-        perspective(12cm);
-    animation: ;
+        perspective(12cm)
+        rotateY(.5turn)
+        translate3d(90%, -40vw, 8cm);
+    transition: 
+        transform .8s ease-out;
+    visibility: hidden;
 }
 
 .chosen-card--front, .chosen-card--back {
     position: absolute;
     width: 100%;
-    transform: translate3d(0px, 0px, 0px);
 }
 
 .chosen-card--back {
@@ -327,13 +330,14 @@ main {
 
 /* -- 6 / Footer */
 footer {
+    margin-top: 1.5rem;
     display: flex;
     justify-content: space-between;
 }
 
 footer p {
     color: var(--grey-color);
-    font-size: 10px;
+    font-size: .72rem;
     text-transform: none;
 }
 
@@ -360,6 +364,30 @@ footer p {
     outline: 2px solid var(--grey-color);
     color: var(--grey-color);
     box-shadow: 0 .2rem .4rem 0 var(--light-grey-color);
+}
+
+.btn-unactive:hover {
+    cursor: default;
+    filter: none;
+}
+
+.card-picked {
+    transform: 
+        translate3d(0, 0, 0);
+    visibility: visible;
+    transition: transform .8s ease-out;
+}
+
+.card-accepted { 
+    transform: 
+        perspective(12cm)
+        translate3d(75vw, -12vw, 0)
+        rotateX(40deg)
+        rotateY(-160deg);
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 

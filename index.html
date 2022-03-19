@@ -34,10 +34,10 @@
 
         <div class="your-faith">
             <p>Your faith</p>
-            <div class="faith-state"><p>unknown</p></div>
+            <div id="faith-state" class="faith-state"><p>unknown</p></div>
         </div>
 
-        <div class="stacked-cards">
+        <div class="stacked-cards" onclick="drawCard()">
             <div class="card card-back card-stacked card-back1"></div>
             <div class="card card-back card-stacked card-back2"></div>
             <div class="card card-back card-stacked card-back3"></div>
@@ -45,17 +45,17 @@
         </div>
 
         <div class="draw-a-card">
-            <button id="draw-a-card-btn" class="btn-primary draw-a-card-btn">Draw a card</button>
+            <button id="draw-a-card-btn" onclick="drawCard()" class="btn-primary draw-a-card-btn">Draw a card</button>
         </div>
 
-        <div class="chosen-card">
+        <div id="chosen-card" class="chosen-card">
             <div class="chosen-card--back card card-back"></div>
             <div class="chosen-card--front card">
                 <div class="card-graphic">
-                    <div class="card-graphic--img"></div>
+                    <div id="card-graphic--img" class="card-graphic--img" alt="the card image could no load"></div>
                     <div class="card-title-container">
                         <hr> 
-                        <p class="card-title">The Vokurka.</p>
+                        <p id="card-graphic--title" class="card-title"></p>
                     </div>   
                     
                 </div>
@@ -63,8 +63,8 @@
         </div>
 
         <div class="summary">
-            <h3 class="card-name">Draw a card to accept <br> your Faith...</h3>
-            <p class="description"></p>
+            <h3 id="card-title" class="card-name">Draw a card to accept <br> your Faith...</h3>
+            <p id="card-description" class="description"></p>
             <button id="accept-btn" class="btn-secondary accept-btn btn-unactive">Accept</button>
         </div>
 
