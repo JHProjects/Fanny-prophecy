@@ -199,6 +199,7 @@ draw: function drawCard() {
         return
     } else if (yourCards.length >= 6) {
         alert("You can draw only 6 cards max.")
+        openCardsOverlay()
         return
     } else {
             chosenCard.classList.remove("card-picked", "card-accepted", "chosen-card")
@@ -221,6 +222,7 @@ draw: function drawCard() {
             let acceptListener = acceptBtn.addEventListener("click", e => {acceptCard(currentCard)}, {once: true})
             let acceptListenerCard = chosenCard.addEventListener("click", e => {acceptCard(currentCard)}, {once: true})
             let openingMenuListener = menuIcon.addEventListener("click", e => {openCardsOverlay()})
+            let openingMenuListenerBtn = showCardsBtn.addEventListener("click", e => {openCardsOverlay()})
        } 
 }
 
@@ -238,40 +240,47 @@ function acceptCard(card) {
 }
 
 function updateFaith(newCard) {
-    yourState += newCard.impact
     let yourStateString
-    if (yourState == 0) {
-        yourStateString = "neutral"
-        s.classList.remove("gloomy", "doomed", "good", "blessed")
-        s.classList.add("neutral")
-        p.classList.remove("gloomy-p", "doomed-p", "good-p", "blessed-p")
-        p.classList.add("neutral-p")
-    } else if (yourState < 0 && yourState >= -3) {
-        yourStateString = "gloomy"
-        s.classList.remove("neutral", "doomed", "good", "blessed")
-        s.classList.add("gloomy")
-        p.classList.remove("neutral-p", "doomed-p", "good-p", "blessed-p")
-        p.classList.add("gloomy-p")
-    } else if (yourState < -3) {
-        yourStateString = "doomed"
-        s.classList.remove("neutral", "gloomy", "good", "blessed")
-        s.classList.add("doomed")
-        p.classList.remove("neutral-p", "gloomy-p", "good-p", "blessed-p")
-        p.classList.add("doomed-p")
-    }  else if (yourState > 0 && yourState <= 3) {
-        yourStateString = "good" 
-        s.classList.remove("neutral", "doomed", "gloomy", "blessed")
-        s.classList.add("good")
-        p.classList.remove("neutral-p", "doomed-p", "gloomy-p", "blessed-p")
-        p.classList.add("good-p")
+    if(newCard == undefined) {
+        yourStateString = "unknown"
+        s.classList.remove("neutral", "gloomy", "doomed", "good", "blessed")
+        p.classList.remove("neutral", "gloomy-p", "doomed-p", "good-p", "blessed-p")
     } else {
-        yourStateString = "blessed"
-        s.classList.remove("neutral", "doomed", "good", "gloomy")
-        s.classList.add("blessed")
-        p.classList.remove("neutral-p", "doomed-p", "good-p", "gloomy-p")
-        p.classList.add("blessed-p")
+        yourState += newCard.impact
+        if (yourState == 0) {
+            yourStateString = "neutral"
+            s.classList.remove("gloomy", "doomed", "good", "blessed")
+            s.classList.add("neutral")
+            p.classList.remove("gloomy-p", "doomed-p", "good-p", "blessed-p")
+            p.classList.add("neutral-p")
+        } else if (yourState < 0 && yourState >= -3) {
+            yourStateString = "gloomy"
+            s.classList.remove("neutral", "doomed", "good", "blessed")
+            s.classList.add("gloomy")
+            p.classList.remove("neutral-p", "doomed-p", "good-p", "blessed-p")
+            p.classList.add("gloomy-p")
+        } else if (yourState < -3) {
+            yourStateString = "doomed"
+            s.classList.remove("neutral", "gloomy", "good", "blessed")
+            s.classList.add("doomed")
+            p.classList.remove("neutral-p", "gloomy-p", "good-p", "blessed-p")
+            p.classList.add("doomed-p")
+        }  else if (yourState > 0 && yourState <= 3) {
+            yourStateString = "good" 
+            s.classList.remove("neutral", "doomed", "gloomy", "blessed")
+            s.classList.add("good")
+            p.classList.remove("neutral-p", "doomed-p", "gloomy-p", "blessed-p")
+            p.classList.add("good-p")
+        } else {
+            yourStateString = "blessed"
+            s.classList.remove("neutral", "doomed", "good", "gloomy")
+            s.classList.add("blessed")
+            p.classList.remove("neutral-p", "doomed-p", "good-p", "gloomy-p")
+            p.classList.add("blessed-p")
+        }
+    
     }
-    p.innerHTML = `${yourStateString}`
+    p.innerHTML = `${yourStateString}` 
 }
 
 function openCardsOverlay() {
@@ -295,6 +304,15 @@ function closeCardsOverlay() {
     closingDiv.classList.add("hidden")
 }
 
+function resetGame() {
+    isCardOnTable = false
+    currentCard = undefined
+    yourCards = []
+    yourState = 0
+
+    closeCardsOverlay()
+    updateFaith(currentCard)
+}
 
 
 // random number function

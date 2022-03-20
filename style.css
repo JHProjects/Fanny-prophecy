@@ -177,10 +177,13 @@ header .menu--icon {
 
 main {
     flex: 1;
+    align-self: center;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: min-content min-content auto min-content;
     gap: .5rem 1.3rem;
+    width:100%;
+    max-width: 1400px;
 }
 
 .btn-primary {
@@ -390,6 +393,13 @@ main {
     margin: 1rem 1.2rem;
 }
 
+.reset-game-btn {
+    float: right;
+    background: var(--quartiary-color);
+    padding: auto 2rem;
+    margin: 1rem 1.3rem;
+}
+
 .card-grid {
     width: calc(100% - 2rem);
     min-height: 100px;
@@ -440,6 +450,69 @@ footer p {
     header h1 {
         width: auto;
     }
+
+    main {
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: auto min-content  auto auto;
+        grid-gap: 1rem .7rem;
+    }
+
+    .your-faith {
+        grid-area: 1/10 / 2/12 ;
+        max-width: 15rem;
+        margin-bottom: min(4rem, 3vw);
+    }
+
+    .faith-state {
+        min-height: 5rem;
+    }
+
+    .summary {
+        grid-area: 2/10 / -1/-1;
+        align-self: start;
+        text-align: left;
+        margin: 0 0;
+    }
+
+    .stacked-cards {
+        grid-area: 2/1 / 4/5;
+        height: clamp(8rem, 15vw, 10rem);
+        margin-bottom: 2rem;
+    }
+
+    .chosen-card {
+        grid-area: 2/6 / -1/-1;
+        transform: 
+            perspective(12cm)
+            rotateY(.5turn)
+            translate3d(250%, -5vw, 8cm);
+    }
+    
+    .draw-a-card {
+        grid-area: 4/1 / 5/4;
+        width: clamp(7rem, 10vw, 10rem);
+        margin: .3rem;
+    }
+
+    .card-grid {
+        width: 70%;
+        margin-left: 1rem;
+        grid-gap: 2rem;
+    }
+
+    .card-grid > .card {
+        width: clamp(7rem, 12vw, 10rem);
+        margin: auto;
+    }
+
+    .user-cards-overlay {
+        width: 40vw;
+    }
+
+    #closing-div {
+        width: 60vw;
+    }
+
 }
 
 
@@ -474,6 +547,15 @@ footer p {
         rotateY(.5turn)
         translate3d(90%, -40vw, 8cm);
     visibility: hidden;
+}
+
+@media screen and (min-width: 800px){
+    .card-accepted {
+        transform: 
+            perspective(12cm)
+            rotateY(.5turn)
+            translate3d(250%, -5vw, 8cm);
+    }
 }
 
 .hidden {
